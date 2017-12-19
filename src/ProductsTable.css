@@ -1,0 +1,8 @@
+.table-cart thead{
+	background-color: #4A3692;
+}
+.table-cart thead th { /*I don't like this solution, but this library needs to use !important to create new style*/
+	color: white !important;
+	font-weight: bold !important;
+    font-size: 14px !important;
+}
