@@ -15,22 +15,23 @@ class App extends Component {
   render() {
      var classes= PropTypes.object.isRequired
     return (
-      <MuiThemeProvider className="App">
+      <MuiThemeProvider className="App" >
         <h1>Your Cart</h1>
 
-        <Button className={classes.button} raised color="accent">
-          <Delete className={classes.leftIcon} />
-          Clear card
-        </Button>
-         <Button className={classes.button} raised color="accent">
-          <AddShoppingCartIcon />
-          Add new product
-        </Button>
+        <div className="aling_right">
+          <Button className={classes.button} raised color="accent">
+            <Delete className={classes.leftIcon} />
+            Clear card
+          </Button>
+          <Button className={classes.button} raised color="primary">
+            <AddShoppingCartIcon />
+            Add new product
+          </Button>
+        </div>
 
         <ProductsTable></ProductsTable>
+
         <SimpleMediaCard></SimpleMediaCard>
-
-
 
       </MuiThemeProvider>
     );
