@@ -6,3 +6,5 @@ The implemented  functionalities are:
 - create product
 - remove all products
 - card to show total_price of products
+
+Issues https://github.com/hcarine/shopping-cart/milestones
