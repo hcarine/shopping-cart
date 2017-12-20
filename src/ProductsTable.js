@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Table, {
   TableBody,
-  TableHeader,
   TableCell,
   TableRow,
   TableHead,
@@ -11,8 +10,6 @@ import './ProductsTable.css';
 
 
 class ProductsTable extends Component {
-  
-
   render(){
     var listProduct = this.props.data
     return (
