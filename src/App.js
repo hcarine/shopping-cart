@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Delete from 'material-ui-icons/Delete';
 import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
@@ -9,6 +9,8 @@ import ProductsTable from './ProductsTable'
 import SimpleMediaCard from './SimpleMediaCard'
 import Product from './Product'
 import './App.css';
+
+const theme = createMuiTheme();
 
 class App extends Component {
 
@@ -68,7 +70,7 @@ class App extends Component {
   render() {
      var classes= PropTypes.object.isRequired
     return (
-      <MuiThemeProvider className="App" >
+      <MuiThemeProvider theme={theme}>
         <h1>Your Cart</h1>
 
         <div className="aling_right">
@@ -87,7 +89,7 @@ class App extends Component {
         <SimpleMediaCard data={this.state.productList}></SimpleMediaCard>
 
         <Product
-          selectedValue={this.state.selectedValue}
+          //selectedValue={this.state.selectedValue}
           open={this.state.open}
           onClose={this.handleClose}
         />
