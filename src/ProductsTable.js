@@ -28,7 +28,7 @@ class ProductsTable extends Component {
           <TableBody>
            {listProduct.map(product => {
             return (
-              <TableRow>
+              <TableRow key={product.id}>
                 <TableCell>{product.id}</TableCell>
                 <TableCell>{product.name}</TableCell>
                 <TableCell>{product.coments}</TableCell>

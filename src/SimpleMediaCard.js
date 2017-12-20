@@ -13,14 +13,16 @@ class SimpleMediaCard extends Component {
   }
 
   getTotalPrice(){
-    return this.getTotal('total')
-  }
-  getTotalTax(){
-    return this.getTotal('tax') / 100 * this.getTotal('total')
+    return this.getTotal( 'total', this.state.productList)
   }
 
-  getTotal( key ){
-     var totalPrices = this.state.productList.map(data => data[key])
+  getTotalTax(){
+
+    return this.getTotal('tax', this.state.productList) / 100 * this.getTotal('total', this.state.productList)
+  }
+
+  getTotal( key, data){
+     var totalPrices = data.map(product => product[key])
     return totalPrices.reduce( (accumulator, currentValue) => accumulator + currentValue )
   }
   

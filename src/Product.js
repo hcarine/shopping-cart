@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
-import blue from 'material-ui/colors/blue';
 
 class Product extends Component {
 
@@ -13,7 +12,6 @@ class Product extends Component {
     this.handleListItemClick =this.handleListItemClick.bind(this)
   }
 
-
   handleClose () {
     this.props.onClose(this.getProductData());
   };
@@ -22,7 +20,8 @@ class Product extends Component {
     this.props.onClose(this.getProductData());
   };
   getProductData(){
-    let id = this.props.selectedValue ? this.props.selectedValue.id : parseInt(Math.random() * 10)
+    //let id = this.props.selectedValue ? this.props.selectedValue.id : parseInt(Math.random() * 10)
+    let id = parseInt( Math.random() * 10)
     return {
       id: id,
       name: document.querySelector('#name').value,
@@ -34,7 +33,8 @@ class Product extends Component {
   }
 
   render() {
-    const { classes, onClose, selectedValue, ...other } = this.props;
+    //const { classes, onClose, selectedValue, ...other } = this.props;
+    const { classes, onClose, ...other } = this.props;
 
     return (
       <Dialog fullScreen={this.props.fullScreen} onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other} >
@@ -85,10 +85,9 @@ class Product extends Component {
 }
 
 Product.propTypes = {
-  classes: PropTypes.object.isRequired,
   onClose: PropTypes.func,
-  selectedValue: PropTypes.string,
-  fullScreen: PropTypes.bool.isRequired,
+  /*selectedValue: PropTypes.string,*/
+  fullScreen: PropTypes.bool,
 };
 
 
