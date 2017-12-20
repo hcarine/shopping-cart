@@ -1,29 +1,14 @@
-
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import Avatar from 'material-ui/Avatar';
-import List, { ListItem, ListItemAvatar, ListItemText } from 'material-ui/List';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
-import PersonIcon from 'material-ui-icons/Person';
-import AddIcon from 'material-ui-icons/Add';
 import TextField from 'material-ui/TextField';
-import Typography from 'material-ui/Typography';
 import blue from 'material-ui/colors/blue';
-
-const styles = {
-  avatar: {
-    background: blue[100],
-    color: blue[600],
-  },
-};
 
 class Product extends Component {
 
  constructor(props) {
     super(props)
-
     this.handleClose = this.handleClose.bind(this)
     this.handleListItemClick =this.handleListItemClick.bind(this)
   }

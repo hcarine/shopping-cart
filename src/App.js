@@ -17,7 +17,32 @@ class App extends Component {
     this.state = {
       open: false,
       selectedValue: null,
-      productList: []
+      productList: [
+        {
+          id: 1,
+          name: 'first Product- exemple',
+          coments: 'red tshirt pp',
+          price: 180,
+          tax: 5,
+          total: 189
+        },
+         {
+          id: 2,
+          name: 'first Product- exemple',
+          coments: 'red tshirt pp',
+          price: 180,
+          tax: 5,
+          total: 1
+        },
+         {
+          id: 3,
+          name: 'first Product- exemple',
+          coments: 'red tshirt pp',
+          price: 18,
+          tax: 5,
+          total: 1898
+        }
+      ]
     };
     this.handleClickOpen = this.handleClickOpen.bind(this)
     this.handleClose =this.handleClose.bind(this)
@@ -59,7 +84,7 @@ class App extends Component {
 
         <ProductsTable data={this.state.productList}></ProductsTable>
 
-        <SimpleMediaCard></SimpleMediaCard>
+        <SimpleMediaCard data={this.state.productList}></SimpleMediaCard>
 
         <Product
           selectedValue={this.state.selectedValue}
